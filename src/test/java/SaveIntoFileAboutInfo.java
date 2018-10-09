@@ -33,7 +33,6 @@ public class SaveIntoFileAboutInfo extends InitialComponent {
             listStr.add(aboutTitle);
             listStr.add(aboutText);
            help.createAndWriteFile(listStr, searchPageTitle );
-           System.out.print("haha");
         }
     }
 
