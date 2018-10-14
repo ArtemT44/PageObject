@@ -20,12 +20,12 @@ public class SaveIntoFileAboutInfo extends InitialComponent {
         searchPageTitle = driver.getTitle();
         searchPage.searchValue("Альфа-Банк");
         searchPage.pressEnter();
-        Thread.sleep(1000);
+        searchPage.waitPageLoad();
         searchPage.openPage();
-        Thread.sleep(1000);
         for (String tab: driver.getWindowHandles()){
             driver.switchTo().window(tab);
         }
+        sitePage.waitPageLoad();
         sitePage.openVacancyPage();
         vacancyPage.openAbotPage();
         aboutTitle = vacancyPage.getTitleInfo();

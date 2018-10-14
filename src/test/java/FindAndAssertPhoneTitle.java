@@ -17,12 +17,12 @@ public class FindAndAssertPhoneTitle extends InitialComponent {
         catalogpage.openCatalogList("Электроника");
         catalogpage.openMobilePhoneList();
         productlist.filterByManufacturer("Samsung");
-        Thread.sleep(1000);
+        productlist.waitForElementPresent("Samsung");
         productlist.fillMinCost("17000");
-        Thread.sleep(2000);
+        productlist.waitForElementPresent("Samsung");
             String firstProductNameInList = productlist.saveFirstGoodTitle();
         productlist.goToFirstPhoneInList();
-        Thread.sleep(1000);
+            gooddetail.waitForElement();
             String productNameInDetail = gooddetail.findProductNameInDetail();
             Assert.assertEquals(firstProductNameInList,productNameInDetail);
     }

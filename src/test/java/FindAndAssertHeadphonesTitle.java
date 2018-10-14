@@ -17,14 +17,14 @@ public class FindAndAssertHeadphonesTitle extends InitialComponent {
         catalogpage.openCatalogList("Электроника");
         catalogpage.openHedphonesList();
         productlist.filterByManufacturer("Beats");
-        Thread.sleep(1000);
+        productlist.waitForElementPresent("Beats");
         productlist.fillMinCost("17000");
-        Thread.sleep(1000);
+        productlist.waitForElementPresent("Beats");
         productlist.fillMaxCost("25000");
-        Thread.sleep(2000);
+        productlist.waitForElementPresent("Beats");
             String firstProductNameInList = productlist.saveFirstGoodTitle();
         productlist.goToFirstPhoneInList();
-        Thread.sleep(1000);
+        gooddetail.waitForElement();
             String productNameInDetail = gooddetail.findProductNameInDetail();
         Assert.assertEquals(firstProductNameInList,productNameInDetail);
     }

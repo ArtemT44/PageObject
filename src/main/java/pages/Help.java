@@ -25,7 +25,6 @@ public class Help {
         return cap.getBrowserName().toLowerCase();
     }
 
-
     public void createAndWriteFile(List<String> item, String searchPageTitle){
         String fileName = getbrowser();
         String time = new SimpleDateFormat("yyyy-MM-dd hh-mm-ss").format(new Date());

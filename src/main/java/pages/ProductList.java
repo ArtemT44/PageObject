@@ -2,13 +2,14 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ProductList {
     WebDriver driver;
 
     private By firstGoodTitle = By.xpath("(.//div[@class='n-snippet-cell2__title']/a)[1]");
-    private By minPrice = By.xpath("//input[contains(@class,'1d02bPcWht')]");
-    private By maxPrice = By.xpath("//input[contains(@class,'1f2usTwyAs')]");
+    private By minPrice = By.xpath(".//input[contains(@class,'1d02bPcWht')]");
+    private By maxPrice = By.xpath(".//input[contains(@class,'1f2usTwyAs')]");
 
     public ProductList(WebDriver driver)
     {
@@ -39,4 +40,8 @@ public class ProductList {
     }
 
 
+    public void waitForElementPresent(String s) {
+        SearchPage searchPage = new SearchPage(driver);
+        searchPage.waiter().until(ExpectedConditions.textToBePresentInElementLocated(By.xpath("(.//div[@class='n-snippet-cell2__title']/a)[1]"),""+s+""));
+    }
 }
