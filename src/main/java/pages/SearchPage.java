@@ -13,7 +13,7 @@ public class SearchPage {
     WebDriver driver;
 
     private By searchField = By.xpath("//input[@id='lst-ib']");
-    private By openFirstFindLink = By.xpath("(.//h3[starts-with(text(),'Альфа-Банк - кредитные ')])");
+    private By openFirstFindLink = By.xpath(".//div/*[starts-with(text(),'https://alfabank.ru')]");
     private By searchResulPage = By.xpath(".//*[@id='hdtb-msb-vis']");
 
     public SearchPage(WebDriver driver) {
