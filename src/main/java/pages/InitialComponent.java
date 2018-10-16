@@ -20,7 +20,7 @@ public class InitialComponent {
 
     @AfterMethod
     public void tearDown(){
-        driver.quit();
-        //driver.close();
+        //driver.quit();
+        driver.close();
     }
 }
